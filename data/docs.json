@@ -1,0 +1,452 @@
+[
+  {
+    "id": "faq_001",
+    "title": "What is Artificial Intelligence (AI)?",
+    "body": "Artificial Intelligence (AI) is the simulation of human intelligence in machines that are programmed to think and learn. It encompasses various subfields including machine learning, natural language processing, computer vision, and robotics. AI systems can perform tasks that typically require human intelligence such as visual perception, speech recognition, decision-making, and language translation."
+  },
+  {
+    "id": "faq_002",
+    "title": "What is Machine Learning (ML)?",
+    "body": "Machine Learning is a subset of AI that enables systems to learn and improve from experience without being explicitly programmed. ML algorithms build mathematical models based on sample data (training data) to make predictions or decisions. There are three main types: supervised learning (labeled data), unsupervised learning (unlabeled data), and reinforcement learning (reward-based learning)."
+  },
+  {
+    "id": "faq_003",
+    "title": "What is Deep Learning?",
+    "body": "Deep Learning is a specialized subset of machine learning that uses artificial neural networks with multiple layers (deep neural networks). These networks learn hierarchical representations of data automatically. Common architectures include Convolutional Neural Networks (CNNs) for image processing and Recurrent Neural Networks (RNNs) for sequential data like text and time series."
+  },
+  {
+    "id": "faq_004",
+    "title": "What is Generative AI?",
+    "body": "Generative AI refers to artificial intelligence systems that can create new content, such as text, images, music, or code, based on patterns learned from training data. Unlike discriminative models that classify or predict, generative models learn the underlying distribution of data to generate novel samples. Examples include GPT for text, DALL-E for images, and GitHub Copilot for code."
+  },
+  {
+    "id": "faq_005",
+    "title": "What are Large Language Models (LLMs)?",
+    "body": "Large Language Models are AI models trained on vast amounts of text data to understand, generate, and manipulate human language. They use transformer architecture and have billions of parameters. LLMs can perform tasks like text completion, translation, summarization, and question-answering. Examples include GPT-4, Claude, Llama, and Gemini."
+  },
+  {
+    "id": "faq_006",
+    "title": "What is the Transformer Architecture?",
+    "body": "The Transformer is a neural network architecture introduced in 2017 that uses self-attention mechanisms to process sequential data. It revolutionized NLP by enabling parallel processing (unlike RNNs) and capturing long-range dependencies. Key components include: encoder-decoder structure, multi-head attention, position encoding, and feed-forward networks. This architecture forms the basis of most modern LLMs."
+  },
+  {
+    "id": "faq_007",
+    "title": "What is Retrieval-Augmented Generation (RAG)?",
+    "body": "RAG is an AI framework that combines information retrieval with generative models. It works by: 1) Retrieving relevant documents from a knowledge base, 2) Augmenting the prompt with this context, 3) Generating responses using an LLM. This approach reduces hallucinations, allows for fact-checking, and enables the system to use up-to-date information beyond the LLM's training cutoff."
+  },
+  {
+    "id": "faq_008",
+    "title": "What are Vector Embeddings?",
+    "body": "Vector embeddings are numerical representations of data (text, images, etc.) in a high-dimensional space where semantically similar items are closer together. For text, embeddings capture meaning, context, and relationships between words. Common models include OpenAI's text-embeddings, Sentence-BERT, and Google's Universal Sentence Encoder."
+  },
+  {
+    "id": "faq_009",
+    "title": "What is a Vector Database?",
+    "body": "A vector database is a specialized database designed to store, index, and query vector embeddings efficiently. It enables similarity search by comparing vectors using metrics like cosine similarity or Euclidean distance. Popular vector databases include Pinecone, Weaviate, Qdrant, FAISS, and ChromaDB."
+  },
+  {
+    "id": "faq_010",
+    "title": "What is Cosine Similarity?",
+    "body": "Cosine similarity measures the cosine of the angle between two vectors in a multi-dimensional space. It ranges from -1 (completely opposite) to 1 (identical), with 0 indicating orthogonality (no similarity). It's commonly used in NLP and information retrieval to compare document or word embeddings, as it focuses on orientation rather than magnitude."
+  },
+  {
+    "id": "faq_011",
+    "title": "What is Prompt Engineering?",
+    "body": "Prompt engineering is the practice of designing and optimizing input prompts to guide LLMs toward desired outputs. Techniques include: few-shot prompting (providing examples), chain-of-thought (breaking down reasoning), role-playing, and system messages. Effective prompt engineering can significantly improve response quality, reduce hallucinations, and make outputs more consistent."
+  },
+  {
+    "id": "faq_012",
+    "title": "What are AI Hallucinations?",
+    "body": "AI hallucinations occur when LLMs generate plausible-sounding but incorrect or fabricated information. This happens because models are trained to generate statistically likely text rather than factually accurate information. Hallucinations can be reduced through techniques like RAG, fine-tuning, better prompting, and implementing guardrails."
+  },
+  {
+    "id": "faq_013",
+    "title": "What is Fine-tuning?",
+    "body": "Fine-tuning is the process of taking a pre-trained model and training it further on a specific dataset to adapt it to a particular task or domain. This involves adjusting some or all of the model's weights using a smaller, task-specific dataset. Fine-tuning can improve performance on specialized tasks but requires computational resources and carefully curated data."
+  },
+  {
+    "id": "faq_014",
+    "title": "What is LangChain?",
+    "body": "LangChain is an open-source framework for building applications with LLMs. It provides tools for chaining multiple LLM calls, integrating with external data sources, managing memory, and creating agents. Key components include: Chains (sequences of calls), Agents (LLM-powered decision makers), Memory (state management), and Indexes (document loaders and retrievers)."
+  },
+  {
+    "id": "faq_015",
+    "title": "What is LlamaIndex?",
+    "body": "LlamaIndex (formerly GPT Index) is a data framework for LLM applications that provides tools for ingesting, structuring, and accessing private or domain-specific data. It simplifies creating indices over heterogeneous data sources and integrating them with LLMs through query interfaces. It's particularly useful for RAG applications with complex data requirements."
+  },
+  {
+    "id": "faq_016",
+    "title": "What is Semantic Search?",
+    "body": "Semantic search goes beyond keyword matching to understand the intent and contextual meaning of search queries. It uses vector embeddings and similarity measures to find content that is conceptually related, even if different words are used. This allows for more accurate and relevant search results compared to traditional keyword-based approaches."
+  },
+  {
+    "id": "faq_017",
+    "title": "What is BM25 Retrieval?",
+    "body": "BM25 (Best Matching 25) is a probabilistic information retrieval algorithm that ranks documents based on query terms appearing in each document. It improves upon TF-IDF by considering document length normalization and term frequency saturation. BM25 is often used in hybrid search systems alongside vector search for improved retrieval accuracy."
+  },
+  {
+    "id": "faq_018",
+    "title": "What is Hybrid Search?",
+    "body": "Hybrid search combines multiple retrieval methods (typically semantic/vector search and keyword/BM25 search) to improve overall retrieval quality. The results from different methods are merged and re-ranked using techniques like reciprocal rank fusion or learning-to-rank. This approach leverages the strengths of both methods: semantic understanding from vectors and exact keyword matching from BM25."
+  },
+  {
+    "id": "faq_019",
+    "title": "What is a RAG Pipeline?",
+    "body": "A RAG pipeline consists of several stages: 1) Document ingestion (loading and preprocessing), 2) Chunking (splitting documents into manageable pieces), 3) Embedding (creating vector representations), 4) Indexing (storing vectors in a database), 5) Retrieval (finding relevant chunks for a query), 6) Augmentation (adding context to the prompt), 7) Generation (LLM produces answer), and 8) Post-processing (formatting response)."
+  },
+  {
+    "id": "faq_020",
+    "title": "What is Text Chunking?",
+    "body": "Text chunking is the process of splitting large documents into smaller, overlapping segments for processing by LLMs. Common strategies include: fixed-size chunks (by character count), sentence-aware splitting, paragraph splitting, and recursive chunking. Overlap between chunks (typically 10-20%) helps maintain context across boundaries. The optimal chunk size depends on the embedding model and use case."
+  },
+  {
+    "id": "faq_021",
+    "title": "What are Token Limits?",
+    "body": "Token limits refer to the maximum number of tokens (words/subwords) that an LLM can process in a single request. This includes both input and output tokens. Common limits: GPT-3.5 Turbo (16K tokens), GPT-4 (8K-128K), Claude (200K). Exceeding limits causes truncation. In RAG, chunk sizes and retrieval counts must be optimized to fit within these constraints while providing sufficient context."
+  },
+  {
+    "id": "faq_022",
+    "title": "What is Few-Shot Learning?",
+    "body": "Few-shot learning is a technique where an LLM is given a few examples (typically 1-10) of a task within the prompt to demonstrate the desired format or behavior. This helps the model understand the task without extensive fine-tuning. Few-shot prompting is especially useful for structured outputs, classification tasks, or when the model needs to follow specific formatting rules."
+  },
+  {
+    "id": "faq_023",
+    "title": "What is Chain-of-Thought Prompting?",
+    "body": "Chain-of-Thought (CoT) prompting encourages LLMs to break down complex problems into intermediate reasoning steps before arriving at a final answer. By including 'Let's think step by step' or similar cues in prompts, models produce more accurate results for mathematical, logical, or multi-step reasoning tasks. CoT can be implemented through zero-shot (just the instruction) or few-shot (with examples)."
+  },
+  {
+    "id": "faq_024",
+    "title": "What is Temperature in LLMs?",
+    "body": "Temperature is a hyperparameter that controls the randomness of LLM outputs. Lower temperatures (0.0-0.3) produce more deterministic, focused responses. Higher temperatures (0.7-1.0) increase creativity and diversity. For factual or consistent responses (like in RAG systems), lower temperatures are preferred. For creative tasks, higher temperatures work better. Temperature of 0 makes outputs completely deterministic."
+  },
+  {
+    "id": "faq_025",
+    "title": "What is Top-p Sampling?",
+    "body": "Top-p sampling (nucleus sampling) is an alternative to temperature that selects from the smallest set of tokens whose cumulative probability exceeds p (e.g., 0.9). This dynamically adapts the selection pool based on distribution confidence. Combined with temperature, it helps balance coherence and diversity. Typical values range from 0.7 to 0.95 for balanced outputs."
+  },
+  {
+    "id": "faq_026",
+    "title": "What is FAISS?",
+    "body": "FAISS (Facebook AI Similarity Search) is an open-source library for efficient similarity search and clustering of dense vectors. It supports various indexing methods (IVF, HNSW, PQ) and distance metrics (L2, inner product, cosine). FAISS is optimized for billion-scale vector databases and supports GPU acceleration. It's widely used in production RAG systems for fast nearest neighbor search."
+  },
+  {
+    "id": "faq_027",
+    "title": "What is ChromaDB?",
+    "body": "ChromaDB is an open-source embedding database designed for AI applications. It provides a simple API for storing and querying vector embeddings with metadata filtering. Features include: automatic embedding generation, persistent storage, and integration with LangChain/LlamaIndex. Chroma is particularly beginner-friendly and suitable for small to medium-scale applications."
+  },
+  {
+    "id": "faq_028",
+    "title": "What is a Knowledge Graph?",
+    "body": "A knowledge graph is a structured representation of knowledge as entities (nodes) and relationships (edges). In AI systems, knowledge graphs can complement vector databases by providing explicit semantic relationships. Hybrid approaches combine vector similarity with graph traversal for more accurate and explainable retrieval, especially for complex queries requiring relational reasoning."
+  },
+  {
+    "id": "faq_029",
+    "title": "What is Self-Attention?",
+    "body": "Self-attention is a mechanism that allows each position in a sequence to attend to all positions in the same sequence to compute a representation. It calculates attention scores between all pairs of tokens, enabling the model to weigh the importance of different parts of the input. Multi-head attention runs multiple attention mechanisms in parallel, capturing different types of relationships."
+  },
+  {
+    "id": "faq_030",
+    "title": "What is Positional Encoding?",
+    "body": "Positional encoding adds information about the position of tokens in a sequence to transformer models. Since transformers process tokens in parallel (unlike RNNs), they need explicit position information. Two main approaches: 1) Learned positional embeddings (trainable vectors), and 2) Fixed sinusoidal functions (original transformer paper). This allows the model to understand word order and sequence structure."
+  },
+  {
+    "id": "faq_031",
+    "title": "What is Transfer Learning?",
+    "body": "Transfer learning involves taking a model pre-trained on a large dataset and adapting it to a different but related task. In NLP, models like BERT and GPT are pre-trained on massive text corpora using self-supervised objectives, then fine-tuned for specific tasks. This approach reduces training time and data requirements while improving performance on specialized tasks."
+  },
+  {
+    "id": "faq_032",
+    "title": "What is Multi-modal AI?",
+    "body": "Multi-modal AI systems can process and integrate multiple types of data (modalities) such as text, images, audio, and video. Examples include: DALL-E (text-to-image), Whisper (speech-to-text), and GPT-4V (text + images). These models learn cross-modal representations, enabling tasks like generating images from descriptions or answering questions about visual content."
+  },
+  {
+    "id": "faq_033",
+    "title": "What are AI Agents?",
+    "body": "AI agents are autonomous systems that perceive their environment, make decisions, and take actions to achieve goals. In LLM context, agents use tools (search, calculators, APIs) and memory to complete multi-step tasks. Frameworks like LangChain and AutoGPT enable building agents that can browse the web, execute code, or interact with databases based on natural language instructions."
+  },
+  {
+    "id": "faq_034",
+    "title": "What is Reinforcement Learning from Human Feedback (RLHF)?",
+    "body": "RLHF is a training methodology where LLMs are fine-tuned using human preferences. The process involves: 1) Collecting human comparisons of model outputs, 2) Training a reward model to predict human preferences, 3) Using reinforcement learning (like PPO) to optimize the LLM against the reward model. RLHF helps align models with human values and improves helpfulness, honesty, and harmlessness."
+  },
+  {
+    "id": "faq_035",
+    "title": "What is LoRA Fine-tuning?",
+    "body": "LoRA (Low-Rank Adaptation) is an efficient fine-tuning method that reduces computational cost and memory usage. Instead of updating all model weights, LoRA adds small trainable matrices (low-rank decomposition) to the attention layers. This allows fine-tuning large models with limited resources while maintaining most of the full fine-tuning performance. LoRA is popular for adapting LLMs to specific domains."
+  },
+  {
+    "id": "faq_036",
+    "title": "What is Quantization?",
+    "body": "Quantization reduces the precision of model weights (e.g., from 32-bit to 8-bit or 4-bit) to decrease memory usage and increase inference speed. Techniques include: post-training quantization (after training) and quantization-aware training (during training). While quantization may slightly reduce accuracy, it enables running large models on consumer hardware and reduces cloud inference costs."
+  },
+  {
+    "id": "faq_037",
+    "title": "What is Distributed Training?",
+    "body": "Distributed training splits model training across multiple GPUs or machines to handle large models and datasets. Common strategies include: data parallelism (different data batches on different devices), model parallelism (different model layers on different devices), and pipeline parallelism (sequential layers across devices). Frameworks like PyTorch DDP and DeepSpeed facilitate distributed training of LLMs."
+  },
+  {
+    "id": "faq_038",
+    "title": "What is Model Serving?",
+    "body": "Model serving involves deploying trained models to production environments where they can handle inference requests. Considerations include: latency, throughput, scalability, cost, and monitoring. Popular serving solutions include: TorchServe, TensorFlow Serving, Triton Inference Server, and vLLM. For LLMs, specialized optimizations like continuous batching and PagedAttention improve throughput."
+  },
+  {
+    "id": "faq_039",
+    "title": "What is Retrieval Precision vs Recall?",
+    "body": "In RAG systems: Precision measures the proportion of retrieved chunks that are relevant (quality of retrieval). Recall measures the proportion of all relevant chunks that were retrieved (completeness of retrieval). There's typically a trade-off: increasing retrieved chunks (k) improves recall but may reduce precision. RAG systems optimize this balance based on use case requirements."
+  },
+  {
+    "id": "faq_040",
+    "title": "What are RAG Evaluation Metrics?",
+    "body": "Common RAG evaluation metrics include: 1) Retrieval metrics (Hit Rate, MRR, NDCG), 2) Generation metrics (ROUGE, BLEU, BERTScore), 3) End-to-end metrics (Faithfulness, Answer Relevance, Context Relevance). Tools like RAGAS, TruLens, and ARES automate RAG evaluation. Human evaluation remains crucial for assessing answer quality, especially for domain-specific applications."
+  },
+  {
+    "id": "faq_041",
+    "title": "What is Context Window?",
+    "body": "The context window is the maximum amount of text (in tokens) that an LLM can consider at once, including both the prompt and the generated response. Larger context windows allow processing longer documents or more retrieved chunks but increase computational cost. Recent models like Claude 2 (100K tokens) and GPT-4 Turbo (128K tokens) support very large contexts."
+  },
+  {
+    "id": "faq_042",
+    "title": "What is Streamlit?",
+    "body": "Streamlit is an open-source Python framework for building interactive web applications for data science and machine learning. It enables rapid prototyping of AI applications with minimal frontend code. Streamlit is commonly used for building demos, internal tools, and simple interfaces for ML models, including RAG systems and LLM applications."
+  },
+  {
+    "id": "faq_043",
+    "title": "What is Next.js?",
+    "body": "Next.js is a React framework for production-grade web applications. It provides features like server-side rendering, static site generation, API routes, and built-in optimization. For AI applications, Next.js is popular for building full-stack applications where the frontend (React) and backend (API routes) can be deployed together, often with AI SDKs for LLM integration."
+  },
+  {
+    "id": "faq_044",
+    "title": "What are OpenAI Function Calls?",
+    "body": "OpenAI function calling allows models to generate structured JSON outputs matching predefined function schemas. Instead of free-text responses, the model identifies which function to call and with what parameters. This enables building more reliable and structured applications, such as extracting entities, calling APIs, or generating database queries from natural language."
+  },
+  {
+    "id": "faq_045",
+    "title": "What is Pydantic?",
+    "body": "Pydantic is a Python library for data validation and settings management using Python type annotations. It ensures data conforms to specified schemas and provides clear error messages. In FastAPI applications, Pydantic models define request/response schemas, validate inputs, and serialize outputs. It's essential for building robust APIs with proper input validation."
+  },
+  {
+    "id": "faq_046",
+    "title": "What is JWT Authentication?",
+    "body": "JWT (JSON Web Token) authentication is a stateless method for securely transmitting information between parties as a JSON object. In web applications, after login, the server issues a JWT containing user claims. The client includes this token in subsequent requests. JWTs are digitally signed, preventing tampering, and eliminate the need for server-side session storage."
+  },
+  {
+    "id": "faq_047",
+    "title": "What is CORS?",
+    "body": "CORS (Cross-Origin Resource Sharing) is a security mechanism that allows web applications running at one origin (domain) to access resources from a different origin. Browsers enforce same-origin policy by default. CORS headers (like Access-Control-Allow-Origin) must be set on the server to permit cross-origin requests, essential when frontend and backend are served from different domains."
+  },
+  {
+    "id": "faq_048",
+    "title": "What are Environment Variables?",
+    "body": "Environment variables are dynamic values that can affect how running processes behave. In AI applications, they store sensitive information (API keys, database URLs, secrets) and configuration (model names, thresholds). Using .env files with libraries like python-dotenv keeps secrets out of code. Different environments (development, production) use different variable values."
+  },
+  {
+    "id": "faq_049",
+    "title": "What is Hugging Face?",
+    "body": "Hugging Face is a platform and community for machine learning, providing: 1) Model Hub (thousands of pre-trained models), 2) Datasets (curated datasets), 3) Spaces (hosted demos), and 4) Libraries (Transformers, Diffusers, Datasets). It democratizes access to state-of-the-art models and facilitates collaboration in the ML community through open-source contributions."
+  },
+  {
+    "id": "faq_050",
+    "title": "What is the Future of RAG Systems?",
+    "body": "Future RAG developments include: 1) Multi-modal RAG (text, images, audio), 2) Real-time updating knowledge bases, 3) Improved retrieval with knowledge graphs, 4) Adaptive chunking strategies, 5) Self-improving systems via feedback loops, 6) Integration with agents for complex reasoning, and 7) Better evaluation frameworks. RAG will continue evolving as a primary architecture for enterprise AI applications."
+  },
+  {
+    "id": "faq_051",
+    "title": "What is Computer Vision?",
+    "body": "Computer Vision (CV) is a field of AI that enables computers to interpret and understand visual information from the world. It involves acquiring, processing, analyzing, and understanding digital images to extract meaningful information. Key tasks include image classification, object detection, segmentation, facial recognition, and scene reconstruction. Modern CV heavily relies on convolutional neural networks (CNNs) and transformer architectures like Vision Transformers (ViTs)."
+  },
+  {
+    "id": "faq_052",
+    "title": "What are Convolutional Neural Networks (CNNs)?",
+    "body": "Convolutional Neural Networks are specialized neural networks designed for processing grid-like data such as images. Key components include: 1) Convolutional layers (extract features using filters), 2) Pooling layers (reduce spatial dimensions), 3) Fully connected layers (final classification). CNNs leverage parameter sharing and local connectivity, making them efficient for visual tasks. Architectures like ResNet, VGG, and EfficientNet have become industry standards for computer vision."
+  },
+  {
+    "id": "faq_053",
+    "title": "What is Natural Language Processing (NLP)?",
+    "body": "Natural Language Processing is a subfield of AI that focuses on enabling computers to understand, interpret, and generate human language. NLP combines computational linguistics with machine learning to process text and speech data. Key tasks include: sentiment analysis, named entity recognition, machine translation, text summarization, and question answering. Modern NLP is dominated by transformer-based models like BERT, GPT, and T5."
+  },
+  {
+    "id": "faq_054",
+    "title": "What is Named Entity Recognition (NER)?",
+    "body": "Named Entity Recognition is an NLP task that identifies and classifies named entities in text into predefined categories such as person names, organizations, locations, dates, quantities, and more. NER systems use sequence labeling models like CRF, BiLSTM, or transformer-based architectures. Applications include information extraction, content categorization, and knowledge graph construction."
+  },
+  {
+    "id": "faq_055",
+    "title": "What is Sentiment Analysis?",
+    "body": "Sentiment analysis (opinion mining) is the use of NLP to systematically identify, extract, quantify, and study affective states and subjective information. It typically classifies text as positive, negative, or neutral, but can also detect specific emotions (anger, joy, fear). Approaches range from lexicon-based methods to deep learning models. Applications include brand monitoring, market research, and customer feedback analysis."
+  },
+  {
+    "id": "faq_056",
+    "title": "What are Vision Transformers (ViTs)?",
+    "body": "Vision Transformers apply transformer architecture to computer vision tasks by treating images as sequences of patches. Each image patch is linearly embedded and positional encodings are added, then processed by standard transformer encoders. ViTs have shown competitive or superior performance to CNNs on various vision tasks, especially when trained on large datasets. They excel at capturing long-range dependencies in images."
+  },
+  {
+    "id": "faq_057",
+    "title": "What is Stable Diffusion?",
+    "body": "Stable Diffusion is a latent text-to-image diffusion model that generates high-quality images from text prompts. It operates in a compressed latent space rather than pixel space, making it computationally efficient. The model uses a U-Net architecture with cross-attention layers to incorporate text conditioning. Stable Diffusion is open-source and has sparked widespread innovation in generative image AI applications."
+  },
+  {
+    "id": "faq_058",
+    "title": "What are Diffusion Models?",
+    "body": "Diffusion models are generative models that work by gradually adding noise to data (forward process) and then learning to reverse this process (reverse process). They consist of two Markov chains: one that gradually adds Gaussian noise to data until it becomes pure noise, and another that learns to denoise. Diffusion models have achieved state-of-the-art results in image generation, audio synthesis, and molecular design."
+  },
+  {
+    "id": "faq_059",
+    "title": "What is CLIP?",
+    "body": "CLIP (Contrastive Language-Image Pre-training) is a neural network trained on 400 million image-text pairs to understand the connection between images and text descriptions. It learns to map both images and text into a shared embedding space where similar concepts are close together. CLIP enables zero-shot image classification, image search, and serves as a component in text-to-image models like DALL-E 2."
+  },
+  {
+    "id": "faq_060",
+    "title": "What is DALL-E?",
+    "body": "DALL-E is a generative AI model developed by OpenAI that creates images from text descriptions. DALL-E 2 uses a diffusion model conditioned on CLIP image embeddings. It can generate realistic images and art from natural language prompts, make realistic edits to existing images, and create variations of images. DALL-E demonstrates the power of multi-modal learning combining vision and language understanding."
+  },
+  {
+    "id": "faq_061",
+    "title": "What is Midjourney?",
+    "body": "Midjourney is an independent research lab that produces an AI program under the same name which creates images from textual descriptions. It's known for artistic, stylized outputs with a distinct aesthetic. Unlike DALL-E or Stable Diffusion, Midjourney is primarily accessible through Discord. It uses a proprietary architecture optimized for creative and artistic image generation with strong community features."
+  },
+  {
+    "id": "faq_062",
+    "title": "What is StyleGAN?",
+    "body": "StyleGAN (Style-based Generative Adversarial Network) is a GAN architecture that generates high-quality, realistic images by separating high-level attributes (pose, identity) from stochastic variation (freckles, hair). StyleGAN uses a mapping network to transform latent vectors into intermediate latent space (W-space) and adaptive instance normalization (AdaIN) to control synthesis at different resolutions. StyleGAN2 and StyleGAN3 improved upon the original with better quality and training stability."
+  },
+  {
+    "id": "faq_063",
+    "title": "What are GANs?",
+    "body": "Generative Adversarial Networks consist of two neural networks competing against each other: a generator creates fake data, and a discriminator tries to distinguish real from fake. Through this adversarial training, the generator learns to produce increasingly realistic samples. GANs have been used for image generation, style transfer, data augmentation, and domain adaptation. Challenges include mode collapse and training instability."
+  },
+  {
+    "id": "faq_064",
+    "title": "What is Whisper?",
+    "body": "Whisper is an automatic speech recognition (ASR) system developed by OpenAI, trained on 680,000 hours of multilingual and multitask supervised data. It can transcribe speech in multiple languages, translate speech to English, and identify language. Whisper uses a transformer encoder-decoder architecture and is particularly robust to accents, background noise, and technical language. It's open-source and widely used for speech-to-text applications."
+  },
+  {
+    "id": "faq_065",
+    "title": "What is Speech Synthesis?",
+    "body": "Speech synthesis (text-to-speech) converts written text into spoken audio. Modern neural TTS systems like Tacotron, WaveNet, and VITS use deep learning to generate natural-sounding speech. These models typically have two stages: 1) A sequence-to-sequence model generates a spectrogram from text, 2) A vocoder converts the spectrogram to audio waveforms. Recent advances produce speech nearly indistinguishable from human voices."
+  },
+  {
+    "id": "faq_066",
+    "title": "What is Music Generation AI?",
+    "body": "Music generation AI systems create musical compositions using models like Transformers, RNNs, or diffusion models. Notable systems include OpenAI's MuseNet and Jukebox, Google's MusicLM, and Anthropic's Claude for music. These models can generate music in specific styles, continue musical pieces, or create music from text descriptions. Challenges include maintaining musical structure, harmony, and long-term coherence."
+  },
+  {
+    "id": "faq_067",
+    "title": "What is Code Generation AI?",
+    "body": "Code generation AI models like GitHub Copilot, Codex, and Code Llama assist developers by generating code from natural language descriptions, completing code snippets, or translating code between languages. These models are typically fine-tuned on massive code repositories and can handle multiple programming languages. They improve developer productivity but require careful review for correctness and security."
+  },
+  {
+    "id": "faq_068",
+    "title": "What is Neural Radiance Fields (NeRF)?",
+    "body": "Neural Radiance Fields is a method for synthesizing novel views of complex 3D scenes from 2D images. It represents a scene as a continuous volumetric function that maps 3D coordinates and viewing directions to color and density. By optimizing this neural representation, NeRF can generate photorealistic novel views with complex geometry and appearance. Applications include virtual reality, film production, and robotics."
+  },
+  {
+    "id": "faq_069",
+    "title": "What is 3D Generative AI?",
+    "body": "3D generative AI creates three-dimensional models, scenes, or animations. Approaches include: 1) 2D-to-3D lifting (using depth estimation), 2) Direct 3D generation (using 3D GANs or diffusion models), 3) Neural representations (like NeRF), and 4) Parametric models. Applications span gaming, virtual production, architecture, and product design. Current challenges include computational cost and achieving high resolution."
+  },
+  {
+    "id": "faq_070",
+    "title": "What is Video Generation AI?",
+    "body": "Video generation AI creates or manipulates video content. Techniques include: 1) Frame prediction (predicting next frames), 2) Text-to-video (generating videos from descriptions), 3) Video interpolation (creating smooth slow motion), and 4) Video inpainting (removing objects). Models like RunwayML's Gen-2, Pika Labs, and Google's Imagen Video demonstrate impressive capabilities but face challenges with temporal consistency and resolution."
+  },
+  {
+    "id": "faq_071",
+    "title": "What is Discrete Mathematics in AI?",
+    "body": "Discrete mathematics provides foundational concepts for AI including: 1) Graph theory (neural networks as graphs, knowledge graphs), 2) Combinatorics (search space analysis), 3) Logic (rule-based systems, automated reasoning), 4) Set theory (data representations), 5) Probability theory (uncertainty modeling), and 6) Number theory (cryptography for AI security). Understanding discrete math helps design efficient algorithms and analyze computational complexity."
+  },
+  {
+    "id": "faq_072",
+    "title": "What is Graph Theory in AI?",
+    "body": "Graph theory studies networks of nodes connected by edges, with AI applications including: 1) Neural networks (computational graphs), 2) Knowledge graphs (semantic networks), 3) Social network analysis, 4) Recommendation systems (user-item graphs), 5) Computer vision (region adjacency graphs), and 6) Natural language processing (dependency parse trees). Graph neural networks (GNNs) extend deep learning to graph-structured data."
+  },
+  {
+    "id": "faq_073",
+    "title": "What are Graph Neural Networks (GNNs)?",
+    "body": "Graph Neural Networks are deep learning models that operate directly on graph structures. They propagate and transform node features through the graph using message passing between neighboring nodes. Types include: Graph Convolutional Networks (GCNs), Graph Attention Networks (GATs), and GraphSAGE. Applications include molecule property prediction, social network analysis, recommendation systems, and knowledge graph completion."
+  },
+  {
+    "id": "faq_074",
+    "title": "What is Combinatorial Optimization?",
+    "body": "Combinatorial optimization involves finding optimal solutions from finite sets of discrete objects. AI applications include: 1) Traveling salesman problem (route optimization), 2) Scheduling problems, 3) Resource allocation, 4) Feature selection, and 5) Neural architecture search. Approaches include exact algorithms, heuristics, and learning-based methods like reinforcement learning or graph networks for optimization."
+  },
+  {
+    "id": "faq_075",
+    "title": "What is Automated Theorem Proving?",
+    "body": "Automated theorem proving uses AI to prove mathematical theorems automatically. Systems like Lean, Coq, and Isabelle use formal logic and proof assistants. AI approaches include: 1) Symbolic reasoning, 2) Neural theorem provers (trained on proof datasets), and 3) Hybrid systems combining neural networks with symbolic methods. Applications include software verification, mathematics research, and program synthesis."
+  },
+  {
+    "id": "faq_076",
+    "title": "What is Computational Linguistics?",
+    "body": "Computational linguistics applies computer science to analyze, model, and generate human language. It combines linguistics with algorithms and statistical models. Key areas include: morphology (word structure), syntax (sentence structure), semantics (meaning), pragmatics (context), and phonology (sound systems). Computational linguists develop formal grammars, parsing algorithms, and linguistic resources like WordNet and FrameNet."
+  },
+  {
+    "id": "faq_077",
+    "title": "What is Word2Vec?",
+    "body": "Word2Vec is a neural network-based technique for learning word embeddings from large text corpora. Two architectures: 1) Continuous Bag-of-Words (CBOW) predicts a word from its context, 2) Skip-gram predicts context from a word. Word2Vec embeddings capture semantic relationships through vector arithmetic (king - man + woman ≈ queen). Though surpassed by contextual embeddings (BERT), Word2Vec remains influential and computationally efficient."
+  },
+  {
+    "id": "faq_078",
+    "title": "What is BERT?",
+    "body": "BERT (Bidirectional Encoder Representations from Transformers) is a transformer-based model that pre-trains deep bidirectional representations by jointly conditioning on both left and right context. Pre-training tasks include masked language modeling (predicting masked tokens) and next sentence prediction. BERT revolutionized NLP by providing contextual embeddings that capture word meaning based on surrounding text, achieving state-of-the-art on many NLP benchmarks."
+  },
+  {
+    "id": "faq_079",
+    "title": "What is GPT Architecture?",
+    "body": "GPT (Generative Pre-trained Transformer) uses transformer decoder blocks with masked self-attention (causal attention) to prevent attending to future tokens. Unlike BERT's bidirectional context, GPT processes text left-to-right, making it ideal for generation tasks. Training involves predicting the next token in a sequence. GPT-3 has 175B parameters, GPT-4 is estimated at ~1.7T parameters. The architecture enables few-shot learning and strong generative capabilities."
+  },
+  {
+    "id": "faq_080",
+    "title": "What is T5?",
+    "body": "T5 (Text-to-Text Transfer Transformer) frames all NLP tasks as text-to-text problems: both input and output are text strings. This unified approach allows the same model to perform translation, classification, summarization, etc., by using task-specific prefixes ('translate English to German:', 'summarize:'). T5 uses an encoder-decoder transformer architecture and was pre-trained on the Colossal Clean Crawled Corpus (C4)."
+  },
+  {
+    "id": "faq_081",
+    "title": "What is Mixture of Experts (MoE)?",
+    "body": "Mixture of Experts is a neural network architecture where different sub-networks (experts) specialize in different inputs. A gating network routes each input to the most relevant experts. In LLMs like GPT-4 and Mixtral 8x7B, MoE allows scaling to trillions of parameters while keeping inference cost manageable, as only a subset of experts are activated per token. This enables larger models without proportional increase in computation."
+  },
+  {
+    "id": "faq_082",
+    "title": "What is Sparsity in Neural Networks?",
+    "body": "Sparsity refers to neural networks where many weights are zero. Types include: 1) Weight sparsity (pruned connections), 2) Activation sparsity (zero activations), and 3) Expert sparsity (MoE). Benefits include reduced memory, faster inference, and lower power consumption. Techniques include pruning (removing unimportant weights), sparse training, and sparse attention patterns in transformers (like Longformer's sliding window attention)."
+  },
+  {
+    "id": "faq_083",
+    "title": "What is Flash Attention?",
+    "body": "Flash Attention is an IO-aware exact attention algorithm that reduces memory usage and speeds up transformer training and inference. It avoids storing the full attention matrix in GPU memory by tiling computations and recomputing attention on-the-fly during backward pass. Flash Attention 2 further optimizes this approach. Benefits include longer context handling, faster training, and reduced memory footprint for large models."
+  },
+  {
+    "id": "faq_084",
+    "title": "What is Speculative Decoding?",
+    "body": "Speculative decoding accelerates LLM inference by using a smaller draft model to propose token sequences, which are then verified in parallel by the larger target model. If the draft is correct, multiple tokens are accepted at once; if not, the target model corrects only the first error. This technique can achieve 2-3x speedup without changing output quality, effectively parallelizing what is normally a sequential generation process."
+  },
+  {
+    "id": "faq_085",
+    "title": "What is Post-Training Quantization?",
+    "body": "Post-training quantization reduces model precision after training is complete, typically from FP32 to INT8 or INT4. Techniques include: 1) Static quantization (calibrated on representative data), 2) Dynamic quantization (quantized during inference), and 3) Quantization-aware training (simulates quantization during fine-tuning). PTQ reduces model size and accelerates inference with minimal accuracy loss, crucial for deploying LLMs on edge devices."
+  },
+  {
+    "id": "faq_086",
+    "title": "What is vLLM?",
+    "body": "vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs. Its key innovation is PagedAttention, which applies virtual memory paging concepts to attention key-value cache management. This reduces memory fragmentation and waste, allowing larger batch sizes and higher throughput. vLLM achieves up to 24x higher throughput than Hugging Face Transformers while maintaining model quality."
+  },
+  {
+    "id": "faq_087",
+    "title": "What is TRL (Transformer Reinforcement Learning)?",
+    "body": "TRL is a PyTorch framework for training transformer language models with reinforcement learning, particularly with human feedback (RLHF). It provides implementations of PPO, DPO, and other RL algorithms tailored for LLMs. TRL simplifies the complex process of RLHF by providing reusable components for reward modeling, policy optimization, and evaluation, making RLHF more accessible to researchers and developers."
+  },
+  {
+    "id": "faq_088",
+    "title": "What is DPO (Direct Preference Optimization)?",
+    "body": "Direct Preference Optimization is an alternative to RLHF that directly optimizes language models to align with human preferences without explicit reward modeling or reinforcement learning. DPO derives a simple loss function that maximizes the likelihood of preferred responses over dispreferred ones. It's simpler to implement, more stable to train, and often performs as well as RLHF while requiring less computational resources."
+  },
+  {
+    "id": "faq_089",
+    "title": "What is Synthetic Data Generation?",
+    "body": "Synthetic data generation creates artificial datasets that mimic real data's statistical properties. Methods include: 1) Rule-based generation, 2) GANs, 3) Diffusion models, 4) LLM-based generation. Applications: data augmentation, privacy preservation, testing edge cases, and training when real data is scarce. For LLMs, synthetic data helps with instruction tuning, preference data for RLHF, and domain adaptation."
+  },
+  {
+    "id": "faq_090",
+    "title": "What is AI Safety and Alignment?",
+    "body": "AI safety ensures AI systems behave as intended, while alignment focuses on making AI systems' goals align with human values. Key concerns include: 1) Robustness (handling edge cases), 2) Interpretability (understanding decisions), 3) Controllability (maintaining human oversight), 4) Value alignment (ethical behavior). Techniques include constitutional AI, red teaming, oversight mechanisms, and value learning. This field addresses existential risks from advanced AI systems."
+  }
+]
