@@ -1,59 +1,50 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app import schemas, models
-from app.database import get_db
-from app.core.security import hash_password, verify_password
-from app.core.auth import create_access_token
+from app.db.session import SessionLocal
+from app.models.user import User
+from app.schemas.user import UserCreate, UserLogin
+from app.core.security import hash_password, verify_password, create_access_token
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
-@router.post("/signup", response_model=schemas.UserResponse)
-def signup(user_data: schemas.UserCreate, db: Session = Depends(get_db)):
-    # Check if user exists
-    existing_user = db.query(models.User).filter(
-        models.User.email == user_data.email
-    ).first()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
-    if existing_user:
-        raise HTTPException(
-            status_code=400,
-            detail="Email already registered"
-        )
+@router.post("/signup")
+def signup(user: UserCreate, db: Session = Depends(get_db)):
+    if len(user.password) < 6:
+        raise HTTPException(status_code=400, detail=f"Password too short, create new with at list {6} characters.")
 
-    # Validate password length
-    if len(user_data.password) < 6:
-        raise HTTPException(
-            status_code=400,
-            detail="Password must be at least 6 characters"
-        )
+    if db.query(User).filter(User.username == user.username).first():
+        raise HTTPException(status_code=400, detail="Username already exists")
 
-    # Create new user
-    hashed_password = hash_password(user_data.password)
-    new_user = models.User(
-        email=user_data.email,
-        password_hash=hashed_password
+    if db.query(User).filter(User.email == user.email).first():
+        raise HTTPException(status_code=400, detail="Email already exists")
+
+    new_user = User(
+        full_name=user.full_name,
+        username=user.username,
+        email=user.email,
+        password_hash=hash_password(user.password)
     )
 
     db.add(new_user)
     db.commit()
-    db.refresh(new_user)
 
-    return new_user
+    return {"message": "User registered successfully..."}
 
-@router.post("/login", response_model=schemas.Token)
-def login(user_data: schemas.UserLogin, db: Session = Depends(get_db)):
-    # Find user
-    user = db.query(models.User).filter(
-        models.User.email == user_data.email
-    ).first()
+@router.post("/login")
+def login(user: UserLogin, db: Session = Depends(get_db)):
+    db_user = db.query(User).filter(User.username == user.username).first()
+    
+    if not db_user:
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    if not verify_password(user.password, str(db_user.password_hash)):
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    token = create_access_token({"sub": str(db_user.id)})
 
-    if not user or not verify_password(user_data.password, user.password_hash):
-        raise HTTPException(
-            status_code=401,
-            detail="Incorrect email or password"
-        )
-
-    # Create token
-    access_token = create_access_token(data={"sub": str(user.id)})
-
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"access_token": token, "token_type": "bearer"}

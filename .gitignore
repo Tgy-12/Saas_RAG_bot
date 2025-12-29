@@ -1,5 +1,44 @@
+# Dependencies
+node_modules/
+*.pyo
+*.pyd
+.Python
+*.so
+.venv
+ENV/
+
+venv/
 __pycache__/
 *.pyc
 .env
-venv/
-node_modules/
+data/faiss/*.faiss
+data/faiss/*.pkl
+
+
+# IDE files
+.vscode/
+.idea/
+*.swo
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build files
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Database files
+*.db
+*.sqlite3
+
+# Temporary files
+tmp/
+temp/

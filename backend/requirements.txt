@@ -1,0 +1,19 @@
+fastapi
+numpy==1.26.4
+uvicorn
+sqlalchemy
+python-jose
+bcrypt==4.0.1
+passlib[bcrypt]
+python-dotenv
+pydantic
+email-validator
+
+langchain
+langchain-core
+langchain-text-splitters
+sentence-transformers
+transformers
+faiss-cpu==1.8.0#version upgraded from 1.7.2 to 1.8.0 and added this line to avoid version mismatch error
+openai
+requests

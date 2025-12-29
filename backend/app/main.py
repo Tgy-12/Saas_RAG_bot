@@ -1,31 +1,28 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import auth, protected
-from app.database import engine
-from app.models import user as user_models
+from app.api.auth import router as auth_router
+from app.api import rag
+from app.db.session import Base, engine
+from app.core.config import CORS_ORIGINS
 
-# Create tables
-user_models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="SaaS Copilot API", version="1.0.0")
+app = FastAPI(title="SaaS RAG Support Copilot")
 
-# CORS
+#DB tables are here
+Base.metadata.create_all(bind=engine)
+
+#cors settings
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Include routers
-app.include_router(auth.router)
-app.include_router(protected.router)
-
-@app.get("/")
-def read_root():
-    return {"message": "SaaS Copilot API is running"}
+#Routers
+app.include_router(auth_router, prefix="/auth")
+app.include_router(rag.router)
 
 @app.get("/health")
-def health_check():
+def health():
     return {"status": "ok"}
