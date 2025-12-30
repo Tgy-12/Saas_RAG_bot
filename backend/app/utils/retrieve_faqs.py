@@ -4,6 +4,8 @@ import pickle
 from pathlib import Path
 import numpy as np
 from sentence_transformers import SentenceTransformer
+#from rapidfuzz import process, fuzz
+
 
 INDEX_DIR = Path("data/faiss")
 INDEX_FILE = INDEX_DIR / "index.faiss"
@@ -17,24 +19,34 @@ def load_index():
         metadata = pickle.load(f)
     return index, metadata
 
+'''def normalize_question(question: str) -> str:
+    return question.lower().strip()
+'''
 def embed_query(query: str, model):
     vector = model.encode([query])
     return np.array(vector).astype("float32")
 
-def retrieve_faqs(query: str):
-    print("Loading embedding model...")
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+print("Loading embedding model once...")
+EMBEDDING_MODEL = SentenceTransformer("all-MiniLM-L6-v2")
 
+def retrieve_faqs(query: str):
     index, metadata = load_index()
-    query_vector = embed_query(query, model)
+    query_vector = embed_query(query, EMBEDDING_MODEL)
 
     distances, indices = index.search(query_vector, TOP_K)
 
     results = []
-    for idx in indices[0]:
-        if idx != -1:#idx == -1 means no more results
-            results.append(metadata[idx])
+    for rank, idx in enumerate(indices[0]):
+        if idx == -1:
+            continue
+
+        item = metadata[idx].copy()
+        item["score"] = float(distances[0][rank])
+        item["content"] = item.get("content", "")
+        results.append(item)
+
     return results
+
 
 if __name__ == "__main__":
     question = "what is the difference between AI and machine learning?"

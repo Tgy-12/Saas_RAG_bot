@@ -32,10 +32,11 @@ def ask_rag(req: AskRequest):
     # Retrieve top chunks
     all_chunks = retrieve_faqs.retrieve_faqs(req.question)
 
-    good_chunks = [
-        c for c in all_chunks
-        if c.get("score", 0) >= SIMILARITY_THRESHOLD
-    ]
+    good_chunks = all_chunks[:3]
+    # [
+    #     c for c in all_chunks
+    #     if c.get("score", 0) >= SIMILARITY_THRESHOLD
+    # ]
 
 
     # Check if we have any chunks above threshold
