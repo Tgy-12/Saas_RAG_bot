@@ -3,19 +3,21 @@
 ## Objective
 Build a CPU-only Retrieval-Augmented Generation (RAG) backend using FastAPI and FAISS.
 # Saas_RAG_bot
-This  just Let users sign up, log in and ask questions and to answer only via User Question
+This  just Let users sign up, log in and ask questions and to answer only via
+```bash
+User Question
    ↓
-Embed question \n
+Embed question 
    ↓
-FAISS similarity search \n
+FAISS similarity search 
    ↓
-Top-K relevant chunks \n
+Top-K relevant chunks 
    ↓
-Strict RAG prompt \n
+Strict RAG prompt 
    ↓
-FLAN-T5 generates answer \n
+FLAN-T5 generates answer 
 ocumentation.
-
+```
 
 ## Architecture
 - FastAPI backend
